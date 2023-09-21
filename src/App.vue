@@ -304,7 +304,7 @@
                     <PopoverPanel
                       class="absolute left-0 top-auto z-30 w-[16rem] min-w-full mt-1 text-sm bg-white border border-gray-300 rounded shadow-m">
                       <span class="absolute top-0 left-0 w-3 h-3 ml-6 -mt-1 transform rotate-45 bg-white border"></span>
-                      <div class="relative z-10 w-full py-1 bg-white rounded">
+                      <div class="relative z-10 w-full py-1 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <ul class="list-reset">
                           <li
                             class="inline-flex items-center w-full px-4 transition-colors duration-100 cursor-pointer hover:bg-red-100 ">
@@ -315,7 +315,7 @@
                             </svg>
 
                             <a href="#"
-                              class="flex items-start w-full px-4 py-2 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
+                              class="flex items-start w-full px-4 py-2 text-sm font-medium text-gray-900 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
                               <span class="flex-1">Calendar</span> </a>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -331,7 +331,7 @@
                             </svg>
 
                             <a href="#"
-                              class="flex items-start w-full px-4 py-2 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
+                              class="flex items-start w-full px-4 py-2 text-sm font-medium text-gray-900 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
                               <span class="flex-1">Invoice</span> </a>
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -348,7 +348,7 @@
                               </svg>
   
                               <a href="#"
-                                class="flex items-start w-full px-4 py-2 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
+                                class="flex items-start w-full px-4 py-2 text-sm font-medium text-gray-900 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
                                 <span class="flex-1">Users</span>
                                 <span class="ml-2"> <i class="mdi mdi-chevron-right"></i> </span>
                               </a>
@@ -448,7 +448,7 @@
                             </svg>
 
                             <a href="#"
-                              class="flex items-start w-full px-4 py-2 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
+                              class="flex items-start w-full px-4 py-2 text-sm font-medium text-gray-900 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
                               <span class="flex-1">Roles & Permissions</span> </a>
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
