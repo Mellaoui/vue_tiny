@@ -159,12 +159,9 @@
                 <span class="sr-only">View notifications</span>
                 <BellIcon class="w-6 h-6" aria-hidden="true" />
               </PopoverButton>
-              <transition enter-active-class="transition duration-200 ease-out" enter-from-class="translate-y-1 opacity-0"
-                enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in"
-                leave-from-class="translate-y-0 opacity-100" leave-to-class="translate-y-1 opacity-0">
                 <PopoverPanel>
                   <div
-                    class="absolute z-10 flex flex-col w-screen h-full max-w-sm px-4 mt-3 transform -translate-x-12 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 max-h-44 left-3/4 sm:px-0 lg:max-w-sm">
+                    class="absolute z-10 flex flex-col w-screen h-full max-w-sm px-4 mt-3 transform -translate-x-6 border rounded-lg shadow-xl border-blue-50 ring-1 dark:ring-slate-100 ring-black ring-opacity-5 max-h-44 left-3/4 sm:px-0 lg:max-w-sm">
                     <div class="p-4 bg-gray-50 dark:bg-slate-700">
                       <a href="##"
                         class="flow-root px-2 py-2 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50">
@@ -214,7 +211,7 @@
                     </div>
                   </div>
                 </PopoverPanel>
-              </transition>
+              
             </Popover>
 
 
@@ -585,6 +582,25 @@
                       </div>
                       <div class="relative flex-1 px-4 mt-6 sm:px-6">
                         <!-- Your content -->
+                         <!-- Sidebar component, swap this element with another sidebar if you like -->
+                          <div class="flex flex-col px-6 pb-4 overflow-y-auto grow gap-y-5">
+                            
+                            <nav class="flex flex-col flex-1">
+                              <ul role="list" class="flex flex-col flex-1 gap-y-7">
+                                <li>
+                                  <ul role="list" class="-mx-2 space-y-1">
+                                    <li v-for="item in navigation" :key="item.name">
+                                      <a :href="item.href" :class="[item.current ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:text-white hover:bg-indigo-700', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                                        <component :is="item.icon" :class="[item.current ? 'text-white' : 'text-indigo-200 group-hover:text-white', 'h-6 w-6 shrink-0']" aria-hidden="true" />
+                                        {{ item.name }}
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              
+                              </ul>
+                            </nav>
+                          </div>
                       </div>
                     </div>
                   </DialogPanel>
@@ -645,8 +661,10 @@ import {
   ReceiptRefundIcon,
   CogIcon,
   UserIcon,
-  QuestionMarkCircleIcon
-
+  QuestionMarkCircleIcon,
+  SquaresPlusIcon,
+  Squares2X2Icon ,
+  ChartBarIcon
 } from '@heroicons/vue/24/outline'
 import {
   ChevronDownIcon, MagnifyingGlassIcon, ArrowDownCircleIcon,
@@ -802,24 +820,14 @@ const handleSticky = () => {
 const navigation = [
   {
     name: 'Dashboard', href: '#', icon: HomeIcon, current: true,
-    submenu: {
-      name: 'Item 1', href: '#', icon: HomeIcon, current: true,
-      name: 'Item 1', href: '#', icon: HomeIcon, current: false,
-      name: 'Item 1', href: '#', icon: HomeIcon, current: false,
-      submenu: {
-        name: 'Item 1', href: '#', icon: HomeIcon, current: true,
-        name: 'Item 1', href: '#', icon: HomeIcon, current: false,
-        name: 'Item 1', href: '#', icon: HomeIcon, current: false,
-      }
-    }
   },
   { name: 'Layout', href: '#', icon: HomeIcon, current: false },
-  { name: 'Apps', href: '#', icon: HomeIcon, current: false },
-  { name: 'Pages', href: '#', icon: HomeIcon, current: false },
+  { name: 'Apps', href: '#', icon: SquaresPlusIcon, current: false },
+  { name: 'Pages', href: '#', icon: DocumentIcon, current: false },
   { name: 'Components', href: '#', icon: HomeIcon, current: false },
   { name: 'Forms', href: '#', icon: HomeIcon, current: false },
-  { name: 'Tables', href: '#', icon: HomeIcon, current: false },
-  { name: 'Charts & Maps', href: '#', icon: HomeIcon, current: false },
+  { name: 'Tables', href: '#', icon: Squares2X2Icon , current: false },
+  { name: 'Charts & Maps', href: '#', icon: ChartBarIcon, current: false },
   { name: 'Misc', href: '#', icon: HomeIcon, current: false },
 ]
 const teams = [
