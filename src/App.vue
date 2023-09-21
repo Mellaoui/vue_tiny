@@ -99,15 +99,9 @@
           <path d="M.91 9.569l25.067-.172 38.15 65.659L101.98 9.401l25.11.026-62.966 108.06z" fill="#41b883" />
         </svg>
         <div class="flex self-stretch flex-1 gap-x-4 lg:gap-x-6">
-          <form class="relative flex flex-1" action="#" method="GET">
-            <label for="search-field" class="sr-only">Search</label>
-            <MagnifyingGlassIcon class="absolute inset-y-0 left-0 w-5 h-full text-gray-400 pointer-events-none"
-              aria-hidden="true" />
-            <input id="search-field"
-              class="block w-full h-full py-0 pl-8 pr-0 text-gray-900 bg-transparent border-0 placeholder:text-gray-400 sm:text-sm"
-              :class="{ 'bg-white dark:bg-slate-700 dark:text-white': isScrolled }" placeholder="Search..." type="search"
-              name="search" />
-          </form>
+          <div class="relative flex flex-1" />
+       
+         
           <div class="flex items-center gap-x-4 lg:gap-x-6">
             <button @click="toggleDark()" type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
               <span class="sr-only">Color mode</span>
@@ -241,11 +235,11 @@
           </div>
         </div>
       </div>
-      <div as="nav" class="hidden w-full bg-white shadow-sm dark:bg-slate-700 sm:inline-flex" :class="{ 'bg-white dark:bg-slate-700 border-gray-200 shadow-sm border-b transition-all': isScrolled }">
+      <div as="nav" class="hidden bg-white shadow-sm sm:w-full dark:bg-slate-700 sm:inline-flex" :class="{ 'bg-white dark:bg-slate-700 border-gray-200 shadow-sm border-b transition-all': isScrolled }">
         <div class="w-full px-4 mx-auto sm:px-6 lg:px-8">
           <div class="flex h-16">
             <div class="flex">
-              <nav class="hidden lg:flex lg:space-x-20 lg:py-2" aria-label="Global">
+              <nav class="hidden w-full lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
               
 
                 <Popover v-slot="{ open }" class="relative">
@@ -266,7 +260,7 @@
                 </Popover>
 
                 <Popover v-slot="{ open }" class="relative">
-                  <PopoverButton :class="open ? '' : 'text-opacity-90'">
+                  <PopoverButton  :class="open ? '' : 'text-opacity-90'">
                     <span
                       class="inline-flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded-md hover:bg-gray-700 hover:text-white">
                       <img class="w-6 h-6 hover:text-white" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAdUlEQVR4nO2VYQqAIAyF3/E8d9FF7CAvgoIh6nKuQvCDgT+e+3CCApNGAoAdAI0Vrx5FYkdzCkmRO2SF2n4Z2ACsmbXMpQ2bBGfDJbN2E1jgU0Fv/S+wjo0eAnpfMr8W1BjjBBx+RDXU7OvPdeiURO3DmSDlAEeVyZCZgiE0AAAAAElFTkSuQmCC">
@@ -339,7 +333,7 @@
                           </li>
                           <li
                             class="relative inline-flex items-center w-full transition-colors duration-100 cursor-pointer hover:bg-red-100 "
-                            @click="showChildren = !showChildren">
+                            @mouseenter="showChildren = true" @mouseleave="showChildren =  false">
                             <span class="inline-flex items-center w-full px-4">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
@@ -358,7 +352,7 @@
                             </span>
                             <div
                               class="absolute top-0 z-30 w-56 min-w-full mt-1 text-sm transform translate-x-full bg-white border border-gray-300 rounded shadow-md inset-l-full"
-                              v-show="showChildren" @mouseleave="showChildren = false">
+                              v-show="showChildren" @click="showChildren = false">
                               <span
                                 class="absolute top-0 left-0 w-3 h-3 mt-2 -ml-1 transform rotate-45 bg-white border"></span>
                               <div class="relative z-10 w-full py-1 bg-white rounded">
@@ -372,7 +366,7 @@
                                       class="flex items-start w-full px-4 py-2 no-underline transition-colors duration-100 cursor-pointer hover:bg-red-100 hover:no-underline">
                                       <span class="flex-1">List</span> </a>
                                   </li>
-                                  <li class="inline-flex items-center w-full transition-colors duration-100 cursor-pointer hover:bg-red-100">
+                                  <li  @mouseleave="showSubChildren = false" class="inline-flex items-center w-full transition-colors duration-100 cursor-pointer hover:bg-red-100">
                                     <span class="inline-flex items-center w-full px-4 transition-colors duration-100 cursor-pointer hover:bg-red-100">
                                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 rounded-full">
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
