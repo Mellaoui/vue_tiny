@@ -664,7 +664,8 @@ import {
   QuestionMarkCircleIcon,
   SquaresPlusIcon,
   Squares2X2Icon ,
-  ChartBarIcon
+  ChartBarIcon, 
+  RectangleGroupIcon,
 } from '@heroicons/vue/24/outline'
 import {
   ChevronDownIcon, MagnifyingGlassIcon, ArrowDownCircleIcon,
@@ -825,7 +826,7 @@ const navigation = [
   { name: 'Apps', href: '#', icon: SquaresPlusIcon, current: false },
   { name: 'Pages', href: '#', icon: DocumentIcon, current: false },
   { name: 'Components', href: '#', icon: HomeIcon, current: false },
-  { name: 'Forms', href: '#', icon: HomeIcon, current: false },
+  { name: 'Forms', href: '#', icon: RectangleGroupIcon, current: false },
   { name: 'Tables', href: '#', icon: Squares2X2Icon , current: false },
   { name: 'Charts & Maps', href: '#', icon: ChartBarIcon, current: false },
   { name: 'Misc', href: '#', icon: HomeIcon, current: false },
